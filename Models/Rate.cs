@@ -2,8 +2,10 @@
 {
     public class Rate
     {
-        public int Cur_ID { get; set; }
+        public string Currency { get; set; }
         public DateTime Date { get; set; }
-        public decimal? Cur_OfficialRate { get; set; }
+        public double Value { get; set; }
+        public string ValueCurrency { get; set; }
+        public int Amount { get; set; }
     }
 }
