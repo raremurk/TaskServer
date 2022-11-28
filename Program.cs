@@ -1,7 +1,14 @@
+using Server.Helpers;
+using Server.Interfaces;
+using Server.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(options => options.Filters.Add<GlobalExceptionFilter>());
 builder.Services.AddHttpClient();
+builder.Services.AddSingleton<ICacheService, CacheService>();
+builder.Services.AddSingleton<IApiService, ApiService>();
+builder.Services.AddSingleton<IWorkingWithJsonService, WorkingWithJsonService>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

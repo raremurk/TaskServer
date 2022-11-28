@@ -2,7 +2,7 @@
 using System.Text.Json;
 using System.Globalization;
 
-namespace Server
+namespace Server.Helpers
 {
     public class CustomDateTimeConverter : JsonConverter<DateTime>
     {
